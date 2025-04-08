@@ -5,6 +5,9 @@ print("B. CALCULATING THE AREA OF A CIRCLE")
 print("C. FINDING THE HYPOTENUSE OF THE RIGHT TRIANGLE")
 options = input("Choose an option (A, B, or C): ")
 
+while options not in ['A', 'B', 'C']:
+    options = input("Choose only in option (A, B, or C): ")
+
 if options == 'A':
    radius = float(input("Enter the radius of a circle: "))
    circumference = 2 * math.pi * radius
