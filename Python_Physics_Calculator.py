@@ -9,20 +9,47 @@ while options not in ['A', 'B', 'C']:
     options = input("Choose only in option (A, B, or C): ")
 
 if options == 'A':
-   radius = float(input("Enter the radius of a circle: "))
-   circumference = 2 * math.pi * radius
-   print(f"the circumference is: {round(circumference, 3)}cm" )
+    while True:
+         radius = (input("Enter the radius of a circle: "))
+         try:
+            radius = float(radius)  
+            break 
+         except ValueError:
+            print("INVALID! Please Number only.")
+    circumference = 2 * math.pi * radius
+    print(f"the circumference is: {round(circumference, 3)}cm" )
 
 elif options == 'B':
-    radius = float(input("Enter the radius of a circle:"))
+    while True:   
+       radius = (input("Enter the radius of a circle:"))
+       try:
+           radius = float(radius)  
+           break 
+       except ValueError:
+            print("INVALID! Please Number only.")
     area = math.pi * pow(radius, 2)
     print(f"The area of a circle is: {round(area, 3)}cm^2")
     
 elif options == 'C':
-    A = float(input("Enter side A: "))
-    B = float(input("Enter side B: "))
-    c = math.sqrt(pow(A, 2) + pow(B, 2))
-    print(f"Side C = {c}")
+    while True:
+     A = input("Enter side A: ")
+     try:
+        (A) = float(A)
+        print(f"Side A is valid: {A}")  
+        break 
+     except ValueError:
+        print("INVALID A! Please Enter Number: ")
+    while True:
+     B = input("Enter side B: ")
+     try:
+        (B) = float(B)
+        print(f"Side B is valid: {B}")  
+        break 
+     except ValueError:
+        print("INVALID B! Please Enter Number: ")
 
+    C = math.sqrt(pow(A, 2) + pow(B, 2))
+    print(f"Side C = {C}")
+    
 else:
-     print("INVALID OPTION, PLEASE RETRY")
+     print("INVALID")
